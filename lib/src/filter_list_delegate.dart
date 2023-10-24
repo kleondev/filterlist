@@ -212,16 +212,19 @@ One of the tileLabel or suggestionBuilder is required
   List<Widget> buildActions(BuildContext context) {
     return [
       if (hideClearSearchIcon == false)
-        AnimatedOpacity(
-          opacity: query.isNotEmpty ? 1.0 : 0.0,
-          duration: const Duration(milliseconds: 500),
-          curve: Curves.easeInOutCubic,
-          child: SizedBox(
-            width: 25,
-            height: 25,
-            child: IconButton(
-              icon: const Icon(Icons.clear),
-              onPressed: () => query = '',
+        Transform.translate(
+          offset: Offset(-10.0, 0.0),
+          child: AnimatedOpacity(
+            opacity: query.isNotEmpty ? 1.0 : 0.0,
+            duration: const Duration(milliseconds: 500),
+            curve: Curves.easeInOutCubic,
+            child: SizedBox(
+              width: 25,
+              height: 25,
+              child: IconButton(
+                icon: const Icon(Icons.clear),
+                onPressed: () => query = '',
+              ),
             ),
           ),
         ),

@@ -213,7 +213,7 @@ One of the tileLabel or suggestionBuilder is required
     return [
       if (hideClearSearchIcon == false)
         Transform.translate(
-          offset: Offset(-10.0, 0.0),
+          offset: Offset(-20.0, 0.0),
           child: AnimatedOpacity(
             opacity: query.isNotEmpty ? 1.0 : 0.0,
             duration: const Duration(milliseconds: 500),
